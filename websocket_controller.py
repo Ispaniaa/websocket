@@ -21,6 +21,8 @@ async def handle_connection(websocket, path):
                     await client.send(message)
     except websockets.ConnectionClosed:
         print("Клієнт відключився.")
+    except websocket.exceptions.InvalidMessage:
+        print("Некоректний запит отриманий")
     finally:
         # Видаляємо клієнта зі списку
         connected_clients.remove(websocket)
