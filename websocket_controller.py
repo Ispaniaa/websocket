@@ -27,9 +27,7 @@ async def main():
     server = await websockets.serve(handle_connection, "Jonny104.pythonanywhere.com", 8080)
     print("WebSocket сервер запущений на Jonny104.pythonanywhere.com:8080")
     await server.wait_closed()
-
-async def run_server():
-    await main()
-
+    
 # Запуск основного циклу подій
-asyncio.run(run_server)
+if __name__ == "__main__":
+    asyncio.run(main())
