@@ -26,7 +26,7 @@ async def handle_connection(websocket, path):
         connected_clients.remove(websocket)
 
 async def main():
-    server = await websockets.serve(handle_connection, "0.0.0.0",8000)
+    server = await websockets.serve(handle_connection, "0.0.0.0",10000)
     print("WebSocket сервер запущений на Jonny104.pythonanywhere.com:8080")
     await server.wait_closed()
     
